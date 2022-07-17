@@ -10,7 +10,7 @@ export default function MenuItem({title, icon}) {
     <>
       <a
         href="#"
-        className="text-white hover:bg-violet-900 p-2 mx-2 rounded-lg flex"
+        className="text-white hover:bg-indigo-800 p-2 mx-2 rounded-lg flex duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
