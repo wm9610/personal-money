@@ -19,7 +19,7 @@ export default function Searchbar() {
       </svg>
       <input
         type="text"
-        className="px-2 w-full focus:outline-none rounded bg-slate-100"
+        className="mx-2 px-2 w-full focus:outline-none rounded bg-slate-100"
         placeholder="Search"
       />
     </button>
