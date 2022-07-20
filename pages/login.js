@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function login() {
   return (
@@ -82,9 +83,11 @@ export default function login() {
               </button>
             </div>
           </form>
-          <a href="./register" className="block text-center hover:underline">
-            Create new account
-          </a>
+          <Link href="./register">
+            <a className="block text-center hover:underline duration-300">
+              Create new account
+            </a>
+          </Link>
         </div>
       </div>
     </>
