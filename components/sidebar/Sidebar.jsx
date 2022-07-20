@@ -9,8 +9,8 @@ export default function Sidebar() {
           PERSONAL MONEY
         </div>
         <div className="flex flex-col">
-          <MenuItem title="Home" icon="home" />
-          <MenuItem title="Expenses" icon="cash" />
+          <MenuItem title="Home" icon="home" route="/" />
+          <MenuItem title="Expenses" icon="cash" route="./expenses" />
         </div>
       </div>
     </>
