@@ -3,7 +3,7 @@ import {db} from '../../../firebaseConfig';
 
 export default async function ExpenseHandler(req, res) {
   const {id} = req.query;
-  console.log(id);
+
   switch (req.method) {
     case 'GET':
       const singleResult = await fetchSingleExpense(id);
@@ -52,7 +52,7 @@ async function fetchSingleExpense(refId) {
 async function deleteExpense(refId) {
   try {
     const docRef = doc(db, 'expense', refId);
-    result = await deleteDoc(docRef);
+    deleteDoc(docRef);
     return {status: 'OK'};
   } catch (e) {
     return {status: 'NG'};
