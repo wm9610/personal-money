@@ -28,7 +28,7 @@ export default function EditForm({onEdit, expenseId}) {
     const updateExpense = {
       name: nameRef.current.value,
       category: categoryRef.current.value,
-      price: priceRef.current.value,
+      price: parseFloat(priceRef.current.value).toFixed(2),
       date: startDate.toISOString(),
     };
     const baseURL = `/api/expenses/${id}`;
