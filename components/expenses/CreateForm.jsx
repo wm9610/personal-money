@@ -24,7 +24,7 @@ export default function CreateForm({onAdd}) {
     const newExpense = {
       name: nameRef.current.value,
       category: categoryRef.current.value,
-      price: parseFloat(priceRef.current.value).toFixed(2),
+      price: parseFloat(priceRef.current.value),
       date: startDate.toISOString(),
     };
     const baseURL = `/api/expenses`;

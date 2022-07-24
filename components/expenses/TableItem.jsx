@@ -22,7 +22,7 @@ export default function TableItem({data, index, onEdit}) {
         <td className="px-4 py-1">{index}</td>
         <td className="px-4 py-1">{data.name}</td>
         <td className="px-4 py-1">{categories[data.category]}</td>
-        <td className="px-4 py-1">{data.price}</td>
+        <td className="px-4 py-1">{data.price.toFixed(2)}</td>
         <td className="px-4 py-1">
           {format(new Date(data.date), 'dd-MM-yyyy')}
         </td>
