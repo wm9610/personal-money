@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    /* box-sizing: border-box;
+@layer base {
+    html {
+      /* box-sizing: border-box;
     border: 1px solid pink; */
     font-family: 'Nunito Sans', sans-serif;
-}
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }

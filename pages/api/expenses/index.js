@@ -41,7 +41,7 @@ async function fetchAllExpenses() {
         id: item.id,
         ...other,
         date: date.toDate(),
-        month: date.toDate().getMonth(),
+        month: date.toDate().getMonth() + 1,
       });
     });
     return {status: 'OK', expenses};

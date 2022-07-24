@@ -40,7 +40,15 @@ async function fetchSingleExpense(refId) {
     const docRef = doc(db, 'expense', refId);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      return {status: 'OK', expense: docSnap.data()};
+      const {date, ...other} = docSnap.data();
+      return {
+        status: 'OK',
+        expense: {
+          ...other,
+          date: date.toDate(),
+          month: date.toDate().getMonth() + 1,
+        },
+      };
     } else {
       return {status: 'NG', expense: {}};
     }

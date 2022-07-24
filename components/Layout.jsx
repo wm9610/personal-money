@@ -20,7 +20,7 @@ export default function Layout({children}) {
         <Sidebar />
         <main className="flex-1 flex flex-col">
           <Header />
-          <div className="flex-1 p-3">{children}</div>
+          <div className="flex-1 p-5 pt-3">{children}</div>
         </main>
       </div>
     );

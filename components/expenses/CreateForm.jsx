@@ -1,24 +1,45 @@
-import React from 'react';
-import {useState} from 'react';
+import React, {useState, useRef, useContext} from 'react';
+import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import ExpenseContext from '../../context/ExpenseContext';
+import {categories} from '../constant/categoryConstant';
 
-export default function CreateForm() {
-  const categories = {
-    food: 'Food',
-    entertainment: 'Entertainment',
-  };
+export default function CreateForm({onAdd}) {
+  const [startDate, setStartDate] = useState(new Date());
+  const {addExpense} = useContext(ExpenseContext);
+
+  const nameRef = useRef();
+  const categoryRef = useRef();
+  const priceRef = useRef();
+
   const categoryOption = Object.keys(categories).map((category) => (
-    <option key={category} value={categories[category]}>
+    <option key={category} value={category}>
       {categories[category]}
     </option>
   ));
 
-  const [startDate, setStartDate] = useState(new Date());
+  function submitHandler(e) {
+    e.preventDefault();
+    const newExpense = {
+      name: nameRef.current.value,
+      category: categoryRef.current.value,
+      price: priceRef.current.value,
+      date: startDate.toISOString(),
+    };
+    const baseURL = `/api/expenses`;
+    axios.post(baseURL, newExpense).then((response) => {
+      if (response.data.status === 'OK') {
+        addExpense({id: response.data.expenseId, ...newExpense});
+      }
+    });
+    setTimeout(onAdd, 500);
+  }
 
   return (
     <form
-      action=""
+      onSubmit={submitHandler}
+      method="POST"
       className="w-5/6 md:w-9/12 xl:w-1/2 pt-7 pb-5 px-14 mt-5 m-auto bg-white rounded-lg shadow-md"
     >
       <h2 className="text-2xl font-semibold">Add new expense</h2>
@@ -29,6 +50,7 @@ export default function CreateForm() {
           id="name"
           name="name"
           type="text"
+          ref={nameRef}
           required
           className="rounded-md block w-full px-3 py-1 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10"
         />
@@ -38,6 +60,7 @@ export default function CreateForm() {
         <select
           id="category"
           name="category"
+          ref={categoryRef}
           required
           className="rounded-md block w-full px-3 py-1 border bg-white border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10"
         >
@@ -53,6 +76,7 @@ export default function CreateForm() {
           id="price"
           name="price"
           type="number"
+          ref={priceRef}
           required
           placeholder="0.00"
           min={0}
