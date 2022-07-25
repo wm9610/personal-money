@@ -8,7 +8,7 @@ export default function MenuItem({route, title, icon}) {
   };
   return (
     <Link href={route}>
-      <a className="text-white hover:bg-indigo-800 p-2 mx-2 rounded-lg flex duration-300">
+      <a className="text-stone-50 hover:bg-teal-900 p-2 mx-2 rounded-lg flex duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 mr-2"

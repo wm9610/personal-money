@@ -49,7 +49,7 @@ export default function ExpensesTable() {
       <div className="">
         <span>Month: </span>
         <select
-          className="mt-4 ml-1 py-1 px-4 rounded-md bg-gray-200"
+          className="mt-4 ml-1 py-1 px-4 rounded-md bg-gray-200 dark:bg-slate-900/60"
           name="month"
           defaultValue={currentMonth}
           onChange={(e) => setCurrentMonth(e.target.value)}
@@ -60,7 +60,7 @@ export default function ExpensesTable() {
       <div className="min-w-full overflow-hidden align-middle relative shadow-md rounded-lg">
         <table className="min-w-full border-separate">
           <thead>
-            <tr className="text-sm bg-slate-300">
+            <tr className="text-sm bg-slate-300 dark:bg-slate-500">
               <th className="px-4 py-2 w-2">No.</th>
               <th className="px-4 py-2 w-max">Name</th>
               <th className="px-4 py-2 w-1/6">Category</th>

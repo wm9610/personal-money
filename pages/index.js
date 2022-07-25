@@ -37,10 +37,10 @@ export default function Home() {
       </Head>
 
       <div>
-        <h1 className="text-2xl font-bold">
+        <h1 className=" text-zinc-800 text-2xl font-bold">
           Summary of expenses in {months[new Date().getMonth() + 1]}
         </h1>
-        <div className="flex flex-wrap justify-start items-start gap-5 mt-4 ">
+        <div className="flex flex-wrap justify-start gap-5 mt-4 ">
           <PieChart currentMonthExpenses={currentMonthExpenses} />
           <BarChart currentMonthExpenses={currentMonthExpenses} />
         </div>

@@ -70,7 +70,7 @@ export default function BarChart({currentMonthExpenses}) {
   }, [currentMonthExpenses]);
 
   return (
-    <div className="w-96 xl:w-2/5 2xl:w-1/3 mb-auto shadow rounded-lg p-5 pt-3 bg-white">
+    <div className="w-96 xl:w-2/5 2xl:w-1/3 mb-auto shadow rounded-lg p-5 pt-3 bg-stone-50 dark:bg-slate-900/60">
       <h2 className="font-semibold text-center">
         Total amount of expenses on each category
       </h2>

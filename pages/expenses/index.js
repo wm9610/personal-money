@@ -21,19 +21,21 @@ export default function Expenses() {
       <div className="flex flex-col gap-2">
         <div className="flex items-end">
           <div className="flex-1">
-            <h1 className="font-bold text-2xl">Expenses</h1>
+            <h1 className="font-bold text-2xl text-zinc-800 dark:text-slate-300">
+              Expenses
+            </h1>
             <p className="text-sm">These are your expenses of the month.</p>
           </div>
           <div>
             <span>New Expense</span>
             <button
-              className="bg-indigo-600 rounded-md shadow h-9 w-9 duration-300 ml-2"
+              className="bg-teal-700 hover:bg-teal-600 rounded-md shadow h-9 w-9 duration-300 ml-2"
               onClick={() => setNewModal(!newModal)}
             >
               {newModal ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 inline text-white hover:scale-110 duration-75 rotate-45"
+                  className="h-6 w-6 inline text-stone-50 duration-75 rotate-45"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -48,7 +50,7 @@ export default function Expenses() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 inline text-white hover:scale-110 duration-75"
+                  className="h-6 w-6 inline text-stone-50"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

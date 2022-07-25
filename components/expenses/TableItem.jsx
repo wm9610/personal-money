@@ -18,7 +18,7 @@ export default function TableItem({data, index, onEdit}) {
 
   return (
     <>
-      <tr className="even:bg-slate-200 text-sm whitespace-no-wrap">
+      <tr className="even:bg-slate-200 dark:even:bg-slate-600 text-sm whitespace-no-wrap">
         <td className="px-4 py-1">{index}</td>
         <td className="px-4 py-1">{data.name}</td>
         <td className="px-4 py-1">{categories[data.category]}</td>
