@@ -65,7 +65,7 @@ export default function Expenses() {
           </div>
         </div>
         {newModal && <ExpenseForm onAdd={toggleAddForm} />}
-        <ExpensesTable />
+        {!newModal && <ExpensesTable />}
       </div>
     </>
   );

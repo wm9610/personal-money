@@ -3,6 +3,7 @@ import axios from 'axios';
 import TableItem from './TableItem';
 import ExpenseContext from '../../context/ExpenseContext';
 import EditForm from './EditForm';
+import {months} from '../constant/monthConstant';
 
 export default function ExpensesTable() {
   const {expenses, fetchExpenses} = useContext(ExpenseContext);
@@ -36,22 +37,6 @@ export default function ExpensesTable() {
       onEdit={toggleEditForm}
     />
   ));
-
-  const months = {
-    1: 'January',
-    2: 'February',
-    3: 'March',
-    4: 'April',
-    5: 'May',
-    6: 'June',
-    7: 'July',
-    8: 'August',
-    9: 'September',
-    10: 'October',
-    11: 'November',
-    12: 'December',
-  };
-
   const monthOption = Object.keys(months).map((month) => (
     <option key={month} value={month}>
       {months[month]}
