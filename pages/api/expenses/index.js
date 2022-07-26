@@ -1,4 +1,5 @@
 import {collection, getDocs, addDoc, Timestamp} from 'firebase/firestore';
+import {query, orderBy} from 'firebase/firestore';
 import {db} from '../../../firebaseConfig';
 
 export default async function ExpenseHandler(req, res) {
@@ -33,7 +34,8 @@ export default async function ExpenseHandler(req, res) {
 async function fetchAllExpenses() {
   try {
     const colRef = collection(db, 'expense');
-    const querySnapshot = await getDocs(colRef);
+    const q = query(colRef, orderBy('date'));
+    const querySnapshot = await getDocs(q);
     const expenses = [];
     querySnapshot.forEach((item) => {
       const {date, ...other} = item.data();
