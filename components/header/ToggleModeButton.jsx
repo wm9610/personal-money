@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useTheme} from 'next-themes';
 
 export default function ToggleModeButton() {
@@ -24,6 +23,10 @@ export default function ToggleModeButton() {
     localStorage.theme = nextTheme;
     setThemeSetting(nextTheme);
   }
+
+  useEffect(() => {
+    setThemeSetting(localStorage.theme ? localStorage.theme : 'light');
+  }, []);
 
   return (
     <button onClick={toggleTheme}>

@@ -4,7 +4,7 @@ import ToggleModeButton from './ToggleModeButton';
 
 export default function Header() {
   return (
-    <div className="bg-stone-50 dark:bg-slate-900/60 flex justify-between p-2 shadow-md">
+    <div className="bg-stone-50 dark:bg-slate-900/60 flex justify-between p-2 shadow-md sticky">
       <Searchbar />
       <div className="flex gap-2">
         <ToggleModeButton />

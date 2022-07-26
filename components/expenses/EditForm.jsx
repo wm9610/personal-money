@@ -62,11 +62,11 @@ export default function EditForm({onEdit, expenseId}) {
           id="modal"
           className="flex items-end sm:items-center justify-center min-h-full"
         >
-          <div className="relative bg-whitenpm dark:bg-slate-900/60 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-3xl sm:w-full">
+          <div className="relative bg-white dark:bg-slate-900/80 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-3xl sm:w-full">
             <form
               onSubmit={(e) => submitHandler(e, expenseId)}
               method="POST"
-              className="px-10 pt-7 pb-7 m-auto"
+              className="px-10 pt-7 pb-7 m-auto dark:bg-slate-900/60"
             >
               <h1 className="font-bold text-2xl text-zinc-800 dark:text-slate-300">
                 Edit expense
