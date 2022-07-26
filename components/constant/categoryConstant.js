@@ -1,12 +1,12 @@
 export const categories = {
   bills: 'Bills',
   entertainment: 'Entertainment',
-  gifting: 'Gifting',
+  saving: 'Saving',
   groceries: 'Groceries',
   health: 'Health',
-  household: 'Household',
+  travel: 'Travel',
   rent: 'Rent',
-  repayments: 'Repayments',
+  loans: 'Loans',
   transportation: 'Transportation',
   other: 'Other',
 };

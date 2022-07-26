@@ -73,7 +73,6 @@ async function editExpense(refId, expense) {
     const result = await setDoc(docRef, {
       ...expense,
     });
-    console.log(result);
     return {status: 'OK'};
   } catch (e) {
     return {status: 'NG'};
