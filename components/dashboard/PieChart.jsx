@@ -42,6 +42,7 @@ export default function PieChart({currentMonthExpenses}) {
 
   function totalPricePerCategory(expenses) {
     const result = {};
+    console.log(expenses);
     for (const [key, value] of Object.entries(expenses)) {
       result[key] = value.reduce((sum, item) => sum + item.price, 0);
     }
@@ -60,14 +61,14 @@ export default function PieChart({currentMonthExpenses}) {
     return result;
   }
 
-  function parseToChartData(expense) {
+  function parseToChartData(expenses) {
     const {datasets} = chartData;
     const newDatasets = datasets.slice();
-    newDatasets[0].data = Object.values(expense);
+    newDatasets[0].data = Object.values(expenses);
     newDatasets[0].label = 'Percentage of expenses on each category';
     const result = {
       ...chartData,
-      labels: Object.keys(expense),
+      labels: Object.keys(expenses),
       datasets: newDatasets,
     };
     return result;
